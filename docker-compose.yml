@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: matheusbrdev
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: matheusbrdev/php
+    container_name: studies-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/xdebug/99-xdebug.ini:/usr/local/etc/php/conf.d/99-xdebug.ini
+    networks:
+      - studies
+
+  nginx:
+    image: nginx:alpine
+    container_name: studies-server
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - studies
+
+networks:
+  studies:
+    driver: bridge
