@@ -8,6 +8,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: matheusbrdev/php
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     container_name: studies-app
     restart: unless-stopped
     working_dir: /var/www/
