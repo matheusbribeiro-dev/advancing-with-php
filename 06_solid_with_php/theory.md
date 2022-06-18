@@ -39,3 +39,23 @@ Aberto para extensão significa que, ao receber um novo requerimento,
 é possível adicionar um novo comportamento. Fechado para modificação significa que,
 para introduzir um novo comportamento (extensão),
 não é necessário modificar o código existente.
+
+## Liskov Substitution Principle (LSP)
+O Princípio de Substituição de Liskov diz que objetos podem ser substituídos
+por seus subtipos sem que isso afete a execução correta do programa.
+
+## Dependency Inversion Principle
+O Princípio de Inversão de Dependência possui duas definições:
+1. Módulos de alto nível não devem depender de módulos de baixo nível e ambos devem depender de abstrações;
+2. Abstrações não devem depender de detalhes, mas detalhes devem depender de abstrações.
+
+# Interface Segregation Principle (ISP)
+O Princípio de Segregação de Interface diz que ‘interfaces’ específicas são melhores que uma única
+‘interface’ de propósito geral.
+Em programação orientada a objetos, quando falamos de ‘interface’, estamos falando do conjunto de métodos
+que um objeto expõe, ou seja, das maneiras como nós podemos interagir com esse objeto.
+Toda mensagem (ou chamada de método) que um objeto recebe constitui uma ‘interface’.
+A ‘interface’ funciona como um contrato: nós definimos o comportamento da ‘interface’ na forma de
+diferentes métodos que ela possui. Cada classe que deseja compartilhar o comportamento dessa
+‘interface’ precisa implementar os métodos dela. Quando a classe utiliza uma ‘interface’,
+ela assina esse contrato dizendo que irá implementar todos os métodos dessa ‘interface’.
